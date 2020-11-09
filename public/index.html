@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧮 Calculator | Swagat Panda | 201800523</title>
+
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        h5 {
+            color: rgba(0, 128, 128, 0.8);
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 128, 128, 0.8);
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calculate(option) {
+            let first_num, second_num, result;
+            first_num = parseInt(document.getElementById("first_number").value);
+            second_num = parseInt(document.getElementById("second_number").value);
+
+            console.log(first_num);
+            console.log(second_num);
+            console.log(option);
+
+            switch (option) {
+                case '+': result = first_num + second_num; break;
+                case '-': result = first_num - second_num; break;
+                case '*': result = first_num * second_num; break;
+                case '/': result = first_num / second_num; break;
+                default: result = 0;
+            }
+
+            console.log(result.toString());
+            document.getElementById("result").innerHTML = result.toString();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col offset-s3">
+                <h1>Calculator </h1>
+                <h5>SL Lab Assignment 10</h5>
+            </div>
+        </div>
+        <div class="row">
+            <form class="col offset-s3 s6">
+                <div class="row">
+                    <div class="input-field col s11">
+                        <input id="first_number" type="number">
+                        <label for="first_number">First Number</label>
+                    </div>
+                    <div class="input-field col s11">
+                        <input id="second_number" type="number">
+                        <label for="second_number">Second Number</label>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <button class="btn-large waves-effect waves-light col s2" onclick="calculate('+')"><i
+                            class="large material-icons">add</i>
+                    </button>
+
+
+                    <button class="btn-large waves-effect waves-light col offset-s1 s2" onclick="calculate('-')"><i
+                            class="large material-icons">remove</i>
+                    </button>
+
+
+                    <button class="btn-large waves-effect waves-light col offset-s1 s2" onclick="calculate('*')">
+                        <h6>✖</h6>
+                    </button>
+
+
+                    <button class="btn-large waves-effect waves-light col offset-s1 s2" onclick="calculate('/')">
+                        <h6><b>/</b></h6>
+                    </button>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2 id="result">0</h2>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>🚀 Swagat Panda | 201800523 | 43</p>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
